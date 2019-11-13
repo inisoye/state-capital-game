@@ -1,0 +1,148 @@
+/* *Queries for homepage/landing screen begins */
+@media only screen and (max-width: 1192px) {
+    .homepage-container {
+        grid-template-columns: auto auto;
+    }
+}
+
+
+@media only screen and (max-width: 936px) {
+    .homepage-container {
+        grid-template-columns: auto;
+        margin-top: 20%;
+    }
+
+    .homepage-title {
+        height: 4em;
+    }
+
+    .state-h, .capital-h, .number-h {
+        display: block;
+    }
+}
+/* *Queries for homepage/landing screen ends */
+
+
+
+@media only screen and (max-width: 839px) {
+    .gamepage-container {
+        margin-top: 7%;
+    }
+
+    .heading-row {
+        grid-template-columns: auto;
+        grid-row-gap: 0;
+        /* background-color: rgba(0, 0, 255, 0.26); */
+    }
+
+    .heading-row h2 {
+        margin: 3% 0;
+        /* width: 3.5em; */
+        /* display: block; */
+    }
+
+    .forms-container {
+        grid-template-columns: auto;
+        padding-bottom: 2.1em;
+    }
+
+    .form-entry {
+        display: block;
+        margin: 4.1% 0;
+    }
+
+    .heading-plus-form {
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: center;
+        justify-content: center;
+        /* background-color: rgb(51, 51, 0) */
+    }
+
+    .submit {
+        margin-top: 0;
+    }
+
+    .status-container {
+        /* background-color: blanchedalmond; */
+        grid-template-columns: auto;
+        /* align-items: center; */
+        /* justify-content: center; */
+        grid-row-gap: 2em;
+    }
+
+    .status-container-inner {
+        grid-column: 1/2;
+    }
+
+    .practice {
+        /* display: block;
+        margin: auto !important; */
+        grid-column: 1/2;
+    }
+}
+
+
+
+@media only screen and (max-width: 653px) {
+    .status-container-inner {
+        grid-template-columns: auto;
+        width: 20em;
+        text-align: center
+    }
+
+    .total-attempts {
+        grid-column: 1/2;
+        /* grid-row: 1/2; */
+    }
+}
+
+
+
+@media only screen and (max-width: 653px) {
+    th, td {
+        padding: .5em 0;
+    }
+}
+
+
+@media only screen and (max-width: 460px) {
+    table {
+        font-size: .8em;
+    }
+}
+
+
+@media only screen and (max-width: 569px) {
+    .status-container-inner {
+        grid-template-columns: auto;
+        width: 16em;
+        text-align: center
+    }
+
+    .heading-row {
+        display: none;
+    }
+
+
+    /* *Try adding the heading later */
+    /* .heading-row {
+        grid-template-columns: auto auto auto;
+        grid-row-gap: 0;
+        background-color: rgba(0, 0, 255, 0.26);
+    }
+
+    .heading-row h2 {
+        margin: 3% 0;
+        width: 3.5em;
+        display: block;
+    }
+
+    .forms-container {
+        display: block;
+    } */
+
+    .repeat-note {
+        padding: 0 1.5em;
+    }
+}

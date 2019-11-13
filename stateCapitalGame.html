@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>state. capital. number.</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lekton|Rajdhani:300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:200,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/stateCapitalGame.css" />
+    <link rel="stylesheet" href="css/stateCapitalGame2.css" />
+    <script src="js/stateCapitalGame.js"></script>
+  </head>
+  <body onblur="resetGameProgress()" onfocus="originalTitle()">
+    <!-- *Homepage Begins -->
+    <div class="homepage-container" id="homepage-container">
+      <h1 class="homepage-title">
+        <span>
+          <span class="state-h">state. </span
+          ><span class="capital-h">capital. </span
+          ><span class="number-h">number. </span>
+        </span>
+      </h1>
+
+      <button class="start-button" onclick="startGame()">
+        <span>START</span>
+        <img
+          class="start-image"
+          src="icons/baseline-keyboard_arrow_right-24px.svg"
+          alt="arrow pointing right"
+        />
+      </button>
+    </div>
+    <!-- *Homepage Ends -->
+
+    <!-- *Game Page Begins -->
+    <div class="gamepage-container" id="gamepage-container">
+      <div class="heading-plus-form">
+        <!-- *Heading Row Begins -->
+        <div class="heading-row">
+          <h2>ipinle.</h2>
+          <h2 class="olu">ilu.</h2>
+          <h2>nọmba.</h2>
+        </div>
+        <!-- *Heading Row Ends -->
+
+        <!-- *Game Forms Begin -->
+        <div class="forms-container">
+          <form action="" name="form">
+            <input
+              class="state form-entry"
+              id="state"
+              name="state"
+              type="text"
+              placeholder="Enter State"
+            />
+            <input
+              class="capital form-entry"
+              id="capital"
+              name="capital"
+              type="text"
+              placeholder="Enter Capital"
+            />
+            <input
+              max="36"
+              min="1"
+              class="position form-entry"
+              id="position"
+              name="position"
+              type="number"
+              placeholder="Enter Position"
+            />
+            <!-- <input type="button" value="submit" class="submit" onclick="checkEntryCombination()"> -->
+          </form>
+        </div>
+      </div>
+
+      <!-- !Former button. Removed and added to form (LATER REMOVED FROM FORM!) -->
+      <button class="submit" onclick="checkEntryCombination()">submit</button>
+      <!-- *Game Forms End -->
+
+      <!-- *Alert Section Begins -->
+      <div class="alert-container">
+        <p class="alert-paragraph" id="alert-paragraph">
+          <span class="alert-prefix" id="alert-prefix">Alert:</span>
+          <span class="alert" id="alert"></span>
+        </p>
+      </div>
+      <!-- *Alert Section Ends -->
+
+      <!-- *Status Section Begins -->
+      <!-- <div class="status-container"></div> -->
+
+      <div class="status-container">
+        <div class="status-container-inner">
+          <p class="sc">State + Capital (SC) = <span id="sc-status">-</span></p>
+          <!-- *Alerts whether state and capital combination is correct -->
+          <!-- <div class="middle-column">Na Space</div> -->
+          <p class="total-attempts">
+            Total Correct Attempts: <span id="total-attempts-value">0</span>/36
+          </p>
+          <!-- *Counts number of correct SC attempts -->
+          <p class="sn">State + Number (SN) = <span id="sn-status">-</span></p>
+          <!-- *Alerts whether state and position (number) combination is correct -->
+          <!-- <p class="sn-attempts">Correct SN Attempts: <span id="sn-attempts-value">0</span>/36</p> *Counts number of correct SN attempts -->
+        </div>
+
+        <button
+          class="practice"
+          id="practice"
+          onclick="practice(); hideAfter2Secs(); practiceLimiter()"
+        >
+          sheat
+        </button>
+      </div>
+      <!-- *Status Section Ends -->
+
+      <!-- *Counter Section Begins -->
+      <div class="counter-container">
+        <p class="entered-states" id="entered-states">
+          entered states:
+          <span class="entered-states-inner" id="entered-states-inner"
+            ><span id="none-yet">None Yet.</span></span
+          >
+        </p>
+        <p class="repeat-note">
+          Repeating any of the above listed states makes you a sheat. Don't be a
+          sheat, abeg.
+        </p>
+      </div>
+      <!-- *Counter Section Ends -->
+    </div>
+    <!-- *Game Page Begins -->
+
+    <!-- *Table Section Begins-->
+    <div class="table-container" id="table-container">
+      <table id="table">
+        <tr>
+          <th class="state">State</th>
+          <th>Capital</th>
+          <th>Number</th>
+        </tr>
+        <tr class="second">
+          <td class="state">Abia</td>
+          <td>Umuahia</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td class="state">Adamawa</td>
+          <td>Yola</td>
+          <td>2</td>
+        </tr>
+        <tr class="fourth">
+          <td class="state">Akwa Ibom</td>
+          <td>Uyo</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td class="state">Anambra</td>
+          <td>Awka</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td class="state">Bauchi</td>
+          <td>Bauchi</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td class="state">Bayelsa</td>
+          <td>Yenogoa</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td class="state">Benue</td>
+          <td>Makurdi</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td class="state">Borno</td>
+          <td>Maiduguri</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td class="state">Cross River</td>
+          <td>Calabar</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td class="state">Delta</td>
+          <td>Asaba</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="state">Ebonyi</td>
+          <td>Abakaliki</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td class="state">Edo</td>
+          <td>Benin</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td class="state">Ekiti</td>
+          <td>Ado Ekiti</td>
+          <td>14</td>
+        </tr>
+        <tr>
+          <td class="state">Enugu</td>
+          <td>Enugu</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <td class="state">Gombe</td>
+          <td>Gombe</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td class="state">Imo</td>
+          <td>Owerri</td>
+          <td>16</td>
+        </tr>
+        <tr>
+          <td class="state">Jigawa</td>
+          <td>Dutse</td>
+          <td>17</td>
+        </tr>
+        <tr>
+          <td class="state">Kaduna</td>
+          <td>Kaduna</td>
+          <td>18</td>
+        </tr>
+        <tr>
+          <td class="state">Kano</td>
+          <td>Kano</td>
+          <td>19</td>
+        </tr>
+        <tr>
+          <td class="state">Katsina</td>
+          <td>Katsina</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td class="state">Kebbi</td>
+          <td>Birnin Kebbi</td>
+          <td>21</td>
+        </tr>
+        <tr>
+          <td class="state">Kogi</td>
+          <td>Lokoja</td>
+          <td>22</td>
+        </tr>
+        <tr>
+          <td class="state">Kwara</td>
+          <td>Ilorin</td>
+          <td>23</td>
+        </tr>
+        <tr>
+          <td class="state">Lagos</td>
+          <td>Ikeja</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <td class="state">Nasarawa</td>
+          <td>Lafia</td>
+          <td>25</td>
+        </tr>
+        <tr>
+          <td class="state">Niger</td>
+          <td>Minna</td>
+          <td>26</td>
+        </tr>
+        <tr>
+          <td class="state">Ogun</td>
+          <td>Abeokuta</td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <td class="state">Ondo</td>
+          <td>Akure</td>
+          <td>28</td>
+        </tr>
+        <tr>
+          <td class="state">Osun</td>
+          <td>Oshogbo</td>
+          <td>29</td>
+        </tr>
+        <tr>
+          <td class="state">Oyo</td>
+          <td>Ibadan</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <td class="state">Plateau</td>
+          <td>Jos</td>
+          <td>31</td>
+        </tr>
+        <tr>
+          <td class="state">Rivers</td>
+          <td>Port Harcourt</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td class="state">Sokoto</td>
+          <td>Sokoto</td>
+          <td>33</td>
+        </tr>
+        <tr>
+          <td class="state">Taraba</td>
+          <td>Jalingo</td>
+          <td>34</td>
+        </tr>
+        <tr>
+          <td class="state">Yobe</td>
+          <td>Damaturu</td>
+          <td>35</td>
+        </tr>
+        <tr>
+          <td class="state">Zamfara</td>
+          <td>Gusau</td>
+          <td>36</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

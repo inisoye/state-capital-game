@@ -1,0 +1,282 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lekton', sans-serif;
+    background-color: #283B36;
+    color: #FFFBE6;
+}
+
+
+/* *Homepage styling begins */
+.homepage-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 5%;
+    margin-top: 12em;
+    /* background-color: #93E1B0; */
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-title {
+    grid-column: 1/3;
+    background-color: #FFFBE6;
+    color:#356859;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 4em;
+    height: 1.6em;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    padding: 0 3%;
+}
+
+.homepage-title span:first-child {
+    width: 100%;
+    margin: auto;
+}
+
+.capital-h {
+    color: rgb(130, 194, 154);
+}
+
+.start-button {
+    height: 1.6em;
+    width: 4em;
+    font-size: 4em;
+    font-family: 'Lekton', sans-serif;
+    /** flexes 'start' text and image to be completely side by side */
+    display: flex; 
+    align-items: center;
+    background-color: transparent;
+    border: solid 2px #FFFBE6;
+    color: #FFFBE6;
+    border-radius: 15px;
+}
+
+.start-button:hover {
+    cursor: pointer;
+    background-color: #356859;
+}
+
+.start-button * {
+    margin: auto;
+}
+
+.start-button span {
+    margin-left: .34em;
+}
+
+.start-image {
+    height: 1.3em;
+    /* *the filter property is used to customise svg colours. filter code generated with a bookmarked link under "CSS" folder. */
+    filter: invert(91%) sepia(10%) saturate(1308%) hue-rotate(79deg) brightness(92%) contrast(92%);
+    /* filter: invert(99%) sepia(68%) saturate(299%) hue-rotate(317deg) brightness(96%) contrast(112%) */
+}
+/* *Homepage styling ends */
+
+
+
+/* *Game Page styling Begins */
+.gamepage-container {
+    /* *Hides game page by default */
+    display: none;
+    margin-top: 4em;
+}
+
+.heading-row {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: .3em;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 1.7em;
+}
+
+.heading-row h2 {
+    background-color: #FFFBE6;
+    color: #356859;
+    width: 6.5em;
+    display: flex;
+    justify-content: center;
+}
+
+.forms-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: .3em;
+    align-items: center;
+    justify-content: center;
+    margin-left: .7em;
+    margin-top: 2em
+}
+
+.form-entry {
+    width: 9.15em;
+    font-size: 1.8em;
+    background-color: transparent;
+    border: solid 1px #FFFBE6;
+    font-family: 'Lekton', sans-serif;
+    color: rgb(238, 151, 20);
+    text-align: center;
+    border-radius: 15px;
+}
+
+.form-entry::placeholder {
+    font-family: 'Rajdhani', sans-serif;
+    text-align: center;
+    color: #FFFBE6;
+    font-weight: 300;
+}
+
+.submit {
+    background-color: #356859;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #FFFBE6;
+    border-radius: 15px;
+    height: 2.5em;
+    width: 6em;
+    border: solid 1px #FFFBE6;
+    /* *Buttons are apparently inline elements by default (or something like that), they therefore need to be converted to.. 
+    *..block elements before margin: auto could be used on them. */
+    display: block;
+    margin: 2em auto 0;
+}
+
+.submit:hover {
+    background-color: #93E1B0;
+    cursor: pointer;
+    color: #356859;
+    border: solid 1px #356859;
+}
+
+.alert-container {
+    width: 80%;
+    margin: 2.5em auto 0;
+    text-align: center;
+}
+
+.alert-paragraph {
+    display: none;
+}
+
+/* .status-container {
+    margin-top: 2.5em;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    grid-column-gap: 1.9em;
+    
+} */
+
+.status-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-column-gap: 1em;
+    justify-content: center;
+    
+}
+
+.status-container-inner {
+    /* margin: 0 auto; */
+    grid-column: 30.5em;
+    grid-column-gap: 1.9em;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.3em;
+    color: #356859;
+    background-color: #FFFBE6;
+    width: 30.5em;
+}
+
+.total-attempts {
+    grid-row: 1/3;
+    grid-column: 2/3;
+}
+
+.sc {
+    grid-column: 1/2;
+}
+
+.sn {
+    grid-column: 1/2;
+}
+
+/* .middle-column {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    background-color: #283B36;
+    color: #283B36;
+} */
+
+
+.practice {
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #FFFBE6;
+    border-radius: 15px;
+    height: 2.5em;
+    width: 6em;
+    border: solid 1px #FFFBE6;
+    /* *Buttons are apparently inline elements by default (or something like that), they therefore need to be converted to.. 
+    *..block elements before margin: auto could be used on them. */
+    display: block;
+    margin: 0 auto;
+
+    grid-column: 6em;
+}
+
+.practice:hover {
+    background-color: #356859;
+    cursor: pointer;
+}
+
+.counter-container {
+    /* width: 45em; */
+    margin: 2.5em auto 0;
+    text-align: center;
+    color: rgb(255, 135, 92);;
+}
+
+.table-container {
+    /* *Hides table page by default */
+    display: none;
+    margin: 3em 0;
+}
+
+table {
+    width: 24em;
+    background-color: #FFFBE6;
+    color: #356859;
+    margin: auto;
+    text-align: center;
+    font-size: 1.15em;
+}
+
+th, td {
+    padding: .5em 1em;
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 2em;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+tr:nth-child(even) {
+    background-color: #356859;
+    color:#FFFBE6;
+}
+
+tr:hover {
+    color:rgb(255, 96, 38);
+}
